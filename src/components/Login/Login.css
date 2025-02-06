@@ -1,0 +1,177 @@
+/* Full-page container with animated gradient background */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 60px);  /* Subtracting the height of the navbar */
+  width: 100%;  /* Full width of the viewport */
+  background: #f0f0f0; /* Light gray background */
+  font-family: 'Arial', sans-serif;
+  padding: 0 20px;
+  overflow: hidden;
+  margin-top: 60px; /* Offset to make space for the navbar */
+}
+
+/* The 3D animated form container */
+.login-form {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5); /* White-to-light gray gradient */
+  padding: 40px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for floating effect */
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  animation: formEntry 0.5s ease-out; /* Adding smooth form entry animation */
+  transform: perspective(1500px) rotateY(0deg);
+}
+
+/* Smooth animation for form appearance */
+@keyframes formEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3D effect on hover */
+.login-form:hover {
+  transform: perspective(1500px) rotateY(10deg); /* Adds 3D effect when hovering */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+  background-color: rgb(255, 255, 255); /* RGB background change on hover */
+}
+
+/* Heading styling */
+.login-heading {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #ff6f61; /* Unique color for heading */
+}
+
+/* Input fields styling */
+.login-form input {
+  width: 100%;
+  padding: 14px;
+  margin: 15px 0;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: #f9fafb; /* Light background for inputs */
+  color: #333;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus effect for input fields */
+.login-form input:focus {
+  outline: none;
+  border: 2px solid #ff6f61; /* Unique border color on focus */
+  box-shadow: 0 0 8px rgba(255, 111, 97, 0.4);
+}
+
+/* Log-in button styling */
+.login-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+  background-color: #ff6f61; /* Unique color for the button */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Hover effect on log-in button */
+.login-button:hover {
+  background-color: #e55347; /* Slightly darker shade on hover */
+  transform: scale(1.05);
+}
+
+/* Adding a loading spinner on button click */
+.login-button:disabled {
+  background-color: #b0c4de;
+  cursor: not-allowed;
+}
+
+.login-button:disabled::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid #fff;
+  border-top: 4px solid #ff6f61;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Log-in link styling */
+.login-text {
+  text-align: center;
+  color: #555;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.login-text a {
+  color: #ff6f61;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .login-form {
+    padding: 30px;
+    width: 90%;
+  }
+
+  .login-heading {
+    font-size: 26px;
+  }
+
+  .login-button {
+    font-size: 16px;
+  }
+
+  .login-text {
+    font-size: 13px;
+  }
+}

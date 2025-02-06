@@ -1,0 +1,88 @@
+/* Basic styling for the Contact Us page */
+.contact-us-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f4f8; /* Light background */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Container for the form */
+.contact-us-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Heading styles */
+.contact-us-container h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input and textarea styles */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+/* Focus effect for inputs */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #66afe9; /* Light blue border on focus */
+}
+
+/* Button styles */
+.contact-form button {
+  background-color: #66afe9;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #55a0d6; /* Slightly darker blue on hover */
+}
+
+/* Success message styling */
+.email-success-message {
+  color: green;
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .contact-us-container {
+    padding: 20px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+  .contact-form button {
+    font-size: 14px;
+  }
+}
